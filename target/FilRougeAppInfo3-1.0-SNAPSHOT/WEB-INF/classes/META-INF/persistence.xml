@@ -1,0 +1,29 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="cine-pu" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <jta-data-source>java:jboss/datasources/CinemaDS</jta-data-source>
+
+        <class>condorcet.be.demo1.model.cinecondorcet.Film</class>
+        <class>condorcet.be.demo1.model.cinecondorcet.Realisator</class>
+        <class>condorcet.be.demo1.model.harry.Maison</class>
+        <class>condorcet.be.demo1.model.harry.Sorcier</class>
+
+
+        <properties>
+            <!--<property name="jakarta.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:oracle:thin:@mons-oracle19.condorcet.be:1521:orcl"/>
+            <property name="jakarta.persistence.jdbc.user" value="ORA19"/>
+            <property name="jakarta.persistence.jdbc.password" value="oracle"/> -->
+
+
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <context-param>
+        <param-name>dbConnectionString</param-name>
+        <param-value>oracle:mysql://global.db.server:3306/main_db</param-value>
+    </context-param>
+    
+    <servlet>
+        <servlet-name>ApiKeyServlet</servlet-name>
+        <servlet-class>condorcet.be.demo1.web.servlet.ApiKeyServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ApiKeyServlet</servlet-name>
+        <url-pattern>/api-key-servlet</url-pattern>
+        <url-pattern>/apikey-servlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>ChampionInfo</servlet-name>
+        <servlet-class>condorcet.be.demo1.web.servlet.ChampionInfoServlet</servlet-class>
+        
+        <init-param>
+            <param-name>nomChampion</param-name>
+            <param-value>Yasuo</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>roleChampion</param-name>
+            <param-value>Assassin</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>difficulteChampion</param-name>
+            <param-value>Difficile</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChampionInfo</servlet-name>
+        <url-pattern>/champion</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BrawlStarsServlet</servlet-name>
+        <servlet-class>condorcet.be.demo1.web.servlet.BrawlStarsSessionServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BrawlStarsServlet</servlet-name>
+        <url-pattern>/brawlstars</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Fortune</servlet-name>
+        <servlet-class>condorcet.be.demo1.web.servlet.FortuneServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Fortune</servlet-name>
+        <url-pattern>/fortune</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Creators</servlet-name>
+        <servlet-class>condorcet.be.demo1.web.servlet.CreatorsServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Creators</servlet-name>
+        <url-pattern>/creators</url-pattern>
+    </servlet-mapping>
+
+</web-app>
